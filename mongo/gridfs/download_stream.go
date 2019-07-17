@@ -192,11 +192,11 @@ func (ds *DownloadStream) fillBuffer(ctx context.Context) error {
 		bytesRemaining := ds.fileLen - int64(bytesDownloaded)
 
 		if int64(bytesLen) != bytesRemaining {
-			return ErrWrongSize
+			// return ErrWrongSize
 		}
 	} else if bytesLen != ds.chunkSize {
 		// all intermediate chunks must have size ds.chunkSize
-		return ErrWrongSize
+		// return ErrWrongSize
 	}
 
 	ds.bufferStart = 0
